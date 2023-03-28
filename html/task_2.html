@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+		<h1>Задача 2</h1>
+		<p>
+		Нехай X0=X1=1, Xi=Xi-1 + 2*Xi-2 де i = 2,3,... Визначити Xn. Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів
+		</p>
+		<script>
+		// Описуємо функцію нерекурсія
+		function result(n) {
+			let x_n_0 = 1
+			let x_n_1 = 1
+			let x_n
+			for (let i = 1; i < n; i++) {
+				x_n = x_n_0 + 2*x_n_1
+
+					x_n_1 = x_n_0
+					x_n_0 = x_n
+
+	}
+	return x_n
+}
+
+let x_N = result(6)
+	document.write(`нерекурсія ${x_N}<br>`)
+
+// Описуємо функцію для рекурсії
+function result(n) {
+	if (n === 0 || n === 1) return 1
+	else
+		return result(n-1) + 2*result(n-2)
+}
+
+	let x_n = result(10)
+	document.write(`рекурсія ${x_n}<br>`)
+		</script>
+</body>
+</html>

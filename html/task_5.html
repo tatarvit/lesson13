@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 5</h1>
+	<p>
+		Тренажер додавання. Кожні 10 секунд користувачу задають випадковий приклад з додавання двох цифр і робиться 
+		перевірка.
+	</p>
+	<script>
+		let taskID = setInterval(taskSum, 10000, 1, 10)
+		function taskSum(min, max) {
+			// вводимо рандомні значення
+				let randomNum1 = min + Math.floor(Math.random() * (max - min + 1))
+				let randomNum2 = min + Math.floor(Math.random() * (max - min + 1))
+			// знаходимо суму рандомних значень
+			let sumNumbers = randomNum1 + randomNum2
+			// вводимо відповідь від користувача
+			let answer = parseInt(prompt(`введіть значення суми двох чисел ${randomNum1}+${randomNum2}`))
+			if (answer === sumNumbers)
+					alert('вірна відповідь')
+			else alert('відповідь не вірна')
+				// return answer
+			}
+	</script>
+</body>
+</html>
